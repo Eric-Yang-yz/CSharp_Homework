@@ -1,0 +1,7 @@
+C:\作业\软件构造基础(C#)\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\作业\软件构造基础(C#)\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\作业\软件构造基础(C#)\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\作业\软件构造基础(C#)\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\作业\软件构造基础(C#)\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\作业\软件构造基础(C#)\Calculator\Calculator\obj\Debug\Calculator.pdb
