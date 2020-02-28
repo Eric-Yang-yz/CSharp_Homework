@@ -1,0 +1,7 @@
+C:\作业\软件构造基础(C#)\埃氏筛法\埃氏筛法\bin\Debug\埃氏筛法.exe.config
+C:\作业\软件构造基础(C#)\埃氏筛法\埃氏筛法\bin\Debug\埃氏筛法.exe
+C:\作业\软件构造基础(C#)\埃氏筛法\埃氏筛法\bin\Debug\埃氏筛法.pdb
+C:\作业\软件构造基础(C#)\埃氏筛法\埃氏筛法\obj\Debug\埃氏筛法.csprojAssemblyReference.cache
+C:\作业\软件构造基础(C#)\埃氏筛法\埃氏筛法\obj\Debug\埃氏筛法.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\埃氏筛法\埃氏筛法\obj\Debug\埃氏筛法.exe
+C:\作业\软件构造基础(C#)\埃氏筛法\埃氏筛法\obj\Debug\埃氏筛法.pdb

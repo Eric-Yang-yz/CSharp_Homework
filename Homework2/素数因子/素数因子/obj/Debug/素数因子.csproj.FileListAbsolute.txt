@@ -1,0 +1,7 @@
+C:\作业\软件构造基础(C#)\素数因子\素数因子\bin\Debug\素数因子.exe.config
+C:\作业\软件构造基础(C#)\素数因子\素数因子\bin\Debug\素数因子.exe
+C:\作业\软件构造基础(C#)\素数因子\素数因子\bin\Debug\素数因子.pdb
+C:\作业\软件构造基础(C#)\素数因子\素数因子\obj\Debug\素数因子.csprojAssemblyReference.cache
+C:\作业\软件构造基础(C#)\素数因子\素数因子\obj\Debug\素数因子.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\素数因子\素数因子\obj\Debug\素数因子.exe
+C:\作业\软件构造基础(C#)\素数因子\素数因子\obj\Debug\素数因子.pdb

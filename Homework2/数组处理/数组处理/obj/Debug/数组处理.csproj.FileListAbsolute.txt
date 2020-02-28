@@ -1,0 +1,13 @@
+C:\作业\软件构造基础(C#)\数组处理\bin\Debug\数组处理.exe.config
+C:\作业\软件构造基础(C#)\数组处理\bin\Debug\数组处理.exe
+C:\作业\软件构造基础(C#)\数组处理\bin\Debug\数组处理.pdb
+C:\作业\软件构造基础(C#)\数组处理\obj\Debug\数组处理.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\数组处理\obj\Debug\数组处理.exe
+C:\作业\软件构造基础(C#)\数组处理\obj\Debug\数组处理.pdb
+C:\作业\软件构造基础(C#)\数组处理\数组处理\bin\Debug\数组处理.exe.config
+C:\作业\软件构造基础(C#)\数组处理\数组处理\bin\Debug\数组处理.exe
+C:\作业\软件构造基础(C#)\数组处理\数组处理\bin\Debug\数组处理.pdb
+C:\作业\软件构造基础(C#)\数组处理\数组处理\obj\Debug\数组处理.csprojAssemblyReference.cache
+C:\作业\软件构造基础(C#)\数组处理\数组处理\obj\Debug\数组处理.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\数组处理\数组处理\obj\Debug\数组处理.exe
+C:\作业\软件构造基础(C#)\数组处理\数组处理\obj\Debug\数组处理.pdb
