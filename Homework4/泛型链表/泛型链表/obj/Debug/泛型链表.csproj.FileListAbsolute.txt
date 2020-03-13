@@ -1,0 +1,7 @@
+C:\作业\软件构造基础(C#)\泛型链表\泛型链表\bin\Debug\泛型链表.exe.config
+C:\作业\软件构造基础(C#)\泛型链表\泛型链表\bin\Debug\泛型链表.exe
+C:\作业\软件构造基础(C#)\泛型链表\泛型链表\bin\Debug\泛型链表.pdb
+C:\作业\软件构造基础(C#)\泛型链表\泛型链表\obj\Debug\泛型链表.csprojAssemblyReference.cache
+C:\作业\软件构造基础(C#)\泛型链表\泛型链表\obj\Debug\泛型链表.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\泛型链表\泛型链表\obj\Debug\泛型链表.exe
+C:\作业\软件构造基础(C#)\泛型链表\泛型链表\obj\Debug\泛型链表.pdb

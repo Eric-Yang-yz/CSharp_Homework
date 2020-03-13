@@ -1,0 +1,14 @@
+C:\作业\软件构造基础(C#)\模拟闹钟\模拟闹钟\bin\Debug\模拟闹钟.exe.config
+C:\作业\软件构造基础(C#)\模拟闹钟\模拟闹钟\bin\Debug\模拟闹钟.exe
+C:\作业\软件构造基础(C#)\模拟闹钟\模拟闹钟\bin\Debug\模拟闹钟.pdb
+C:\作业\软件构造基础(C#)\模拟闹钟\模拟闹钟\obj\Debug\模拟闹钟.csprojAssemblyReference.cache
+C:\作业\软件构造基础(C#)\模拟闹钟\模拟闹钟\obj\Debug\模拟闹钟.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\模拟闹钟\模拟闹钟\obj\Debug\模拟闹钟.exe
+C:\作业\软件构造基础(C#)\模拟闹钟\模拟闹钟\obj\Debug\模拟闹钟.pdb
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework4\模拟闹钟\模拟闹钟\bin\Debug\模拟闹钟.exe.config
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework4\模拟闹钟\模拟闹钟\bin\Debug\模拟闹钟.exe
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework4\模拟闹钟\模拟闹钟\bin\Debug\模拟闹钟.pdb
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework4\模拟闹钟\模拟闹钟\obj\Debug\模拟闹钟.csprojAssemblyReference.cache
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework4\模拟闹钟\模拟闹钟\obj\Debug\模拟闹钟.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework4\模拟闹钟\模拟闹钟\obj\Debug\模拟闹钟.exe
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework4\模拟闹钟\模拟闹钟\obj\Debug\模拟闹钟.pdb
