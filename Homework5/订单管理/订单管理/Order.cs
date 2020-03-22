@@ -61,6 +61,11 @@ namespace homework5
             return this.Customer;
         }
 
+        public string GetNumber()
+        {
+            return OrderNumber;
+        }
+
         public override string ToString()
         {
             StringBuilder ans = new StringBuilder();

@@ -87,6 +87,26 @@ namespace homework5
             return query;
         }
 
+        public IEnumerable<Order> GetAll()//返回所有订单
+        {
+            var query = from m in Orders
+                        where true
+                        select m;
+            return query;
+        }
+
+        public void SortOrder()//对订单排序
+        {
+            try
+            {
+                Orders.Sort((p1, p2) => Convert.ToInt32(p1.GetNumber()) - Convert.ToInt32(p2.GetNumber()));
+            }
+            catch
+            {
+                Console.WriteLine("出现异常！");
+            }
+        }
+
         public OrderService()
         {
             Orders = new List<Order>();

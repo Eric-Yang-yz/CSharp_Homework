@@ -99,6 +99,26 @@ namespace homework5
             }
         }
 
+        public void GetAll()
+        {
+            var query = Server.GetAll();
+            List<Order> orders = query.ToList();
+            if (orders.Count == 0) Console.WriteLine("无订单！");
+            else
+            {
+                foreach (Order m in orders)
+                {
+                    Console.WriteLine(m.ToString());
+                }
+            }
+        }
+
+        public void SortOrder()
+        {
+            Server.SortOrder();
+            Console.WriteLine("排序完成！");
+        }
+
         public OrderManager()
         {
             Server = new OrderService();

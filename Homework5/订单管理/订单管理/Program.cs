@@ -58,7 +58,7 @@ namespace homework5
             while (true)
             {
                 Console.WriteLine("---------------------------------");
-                Console.WriteLine("欢迎使用YYZ的订单查询系统！\n操作码：（a）添加订单 （b）向指定订单添加商品 （c）删除订单 （d）删除商品\n（e）查询订单号 （f）查询含有某商品的订单 （g）查询某用户的订单\n（x）退出");
+                Console.WriteLine("欢迎使用YYZ的订单查询系统！\n操作码：（a）添加订单 （b）向指定订单添加商品 （c）删除订单 （d）删除商品\n（e）查询订单号 （f）查询含有某商品的订单 （g）查询某用户的订单\n（h）显示所有订单 (i)对所有订单按编号排序 （x）退出");
                 Console.Write("请输入操作码：");
                 string str = Console.ReadLine();
                 char op;
@@ -78,6 +78,7 @@ namespace homework5
                             str2 = Console.ReadLine();
                             Console.WriteLine("请输入用户名称：");
                             str3 = Console.ReadLine();
+                            Console.WriteLine("---------------------------------");
                             CurrentUser = new User(str2, str3);
                             NewOrder = new Order(str1, CurrentUser);
                             manager.AddOrder(NewOrder);
@@ -93,12 +94,14 @@ namespace homework5
                             price = double.Parse(Console.ReadLine());
                             Console.WriteLine("请输入商品数量：");
                             count = int.Parse(Console.ReadLine());
+                            Console.WriteLine("---------------------------------");
                             NewItem = new OrderItem(str2, str3, price, count);
                             manager.AddItemToOrder(str1, NewItem);
                             break;
                         case 'c':
                             Console.WriteLine("请输入订单号：");
                             str1 = Console.ReadLine();
+                            Console.WriteLine("---------------------------------");
                             manager.DeleteOrder(str1);
                             break;
                         case 'd':
@@ -106,26 +109,37 @@ namespace homework5
                             str1 = Console.ReadLine();
                             Console.WriteLine("请输入商品编号：");
                             str2 = Console.ReadLine();
+                            Console.WriteLine("---------------------------------");
                             NewItem = new OrderItem(str2);
                             manager.DeleteItemInOrder(str1, NewItem);
                             break;
                         case 'e':
                             Console.WriteLine("请输入订单号：");
                             str1 = Console.ReadLine();
+                            Console.WriteLine("---------------------------------");
                             manager.FindOrderNumber(str1);
                             break;
                         case 'f':
                             Console.WriteLine("请输入商品编号：");
                             str2 = Console.ReadLine();
+                            Console.WriteLine("---------------------------------");
                             NewItem = new OrderItem(str2);
                             manager.FindItem(NewItem);
                             break;
                         case 'g':
                             Console.WriteLine("请输入用户ID：");
                             str2 = Console.ReadLine();
+                            Console.WriteLine("---------------------------------");
                             CurrentUser = new User(str2, null);
                             manager.FindCustomer(CurrentUser);
                             break;
+                        case 'h':
+                            Console.WriteLine("---------------------------------");
+                            manager.GetAll();break;
+                        case 'i':
+                            Console.WriteLine("---------------------------------");
+                            manager.SortOrder();break;
+                        case 'x':break;
                         default: Console.WriteLine("无效操作符！"); break;
                     }
                 }
