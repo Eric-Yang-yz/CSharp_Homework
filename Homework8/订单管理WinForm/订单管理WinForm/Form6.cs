@@ -21,11 +21,9 @@ namespace 订单管理WinForm
         {
             InitializeComponent();
             OrderNumber = ordernumber;
+            NewItem = CurrentItem;
+            ItemBindingSource.DataSource = NewItem;
             txtOrderNumber.Text = ordernumber;
-            txtItemNumber.Text = CurrentItem.ItemNumber;
-            txtItemName.Text = CurrentItem.Name;
-            txtSinglePrice.Text = CurrentItem.SinglePrice.ToString();
-            txtCount.Text = CurrentItem.Count.ToString();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -48,7 +46,6 @@ namespace 订单管理WinForm
             {
                 lblAlert.Text = "";
                 OrderNumber = txtOrderNumber.Text;
-                NewItem = new OrderItem(txtItemNumber.Text, txtItemName.Text, singleprice, count);
                 isUpdate = true;
                 this.Close();
             }

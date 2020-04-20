@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lblUpdateItemInfo = new System.Windows.Forms.Label();
@@ -43,7 +44,9 @@
             this.lblAlert = new System.Windows.Forms.Label();
             this.txtOrderNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addOrderGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -104,6 +107,7 @@
             // 
             // txtCount
             // 
+            this.txtCount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ItemBindingSource, "Count", true));
             this.txtCount.Location = new System.Drawing.Point(108, 195);
             this.txtCount.Name = "txtCount";
             this.txtCount.Size = new System.Drawing.Size(241, 25);
@@ -120,6 +124,7 @@
             // 
             // txtSinglePrice
             // 
+            this.txtSinglePrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ItemBindingSource, "SinglePrice", true));
             this.txtSinglePrice.Location = new System.Drawing.Point(108, 155);
             this.txtSinglePrice.Name = "txtSinglePrice";
             this.txtSinglePrice.Size = new System.Drawing.Size(241, 25);
@@ -127,6 +132,7 @@
             // 
             // txtItemName
             // 
+            this.txtItemName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ItemBindingSource, "Name", true));
             this.txtItemName.Location = new System.Drawing.Point(108, 115);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(241, 25);
@@ -134,6 +140,7 @@
             // 
             // txtItemNumber
             // 
+            this.txtItemNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ItemBindingSource, "ItemNumber", true));
             this.txtItemNumber.Location = new System.Drawing.Point(108, 75);
             this.txtItemNumber.Name = "txtItemNumber";
             this.txtItemNumber.ReadOnly = true;
@@ -193,6 +200,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "订单号";
             // 
+            // ItemBindingSource
+            // 
+            this.ItemBindingSource.DataSource = typeof(homework5.OrderItem);
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -206,6 +217,7 @@
             this.Text = "Form6";
             this.addOrderGroupBox.ResumeLayout(false);
             this.addOrderGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +240,6 @@
         private System.Windows.Forms.Label lblAlert;
         private System.Windows.Forms.TextBox txtOrderNumber;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource ItemBindingSource;
     }
 }
