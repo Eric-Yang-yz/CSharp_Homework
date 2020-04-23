@@ -1,0 +1,14 @@
+C:\作业\软件构造基础(C#)\SimpleCrawler\SimpleCrawler\bin\Debug\SimpleCrawler.exe.config
+C:\作业\软件构造基础(C#)\SimpleCrawler\SimpleCrawler\bin\Debug\SimpleCrawler.exe
+C:\作业\软件构造基础(C#)\SimpleCrawler\SimpleCrawler\bin\Debug\SimpleCrawler.pdb
+C:\作业\软件构造基础(C#)\SimpleCrawler\SimpleCrawler\obj\Debug\SimpleCrawler.csprojAssemblyReference.cache
+C:\作业\软件构造基础(C#)\SimpleCrawler\SimpleCrawler\obj\Debug\SimpleCrawler.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\SimpleCrawler\SimpleCrawler\obj\Debug\SimpleCrawler.exe
+C:\作业\软件构造基础(C#)\SimpleCrawler\SimpleCrawler\obj\Debug\SimpleCrawler.pdb
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework9\SimpleCrawler\SimpleCrawler\bin\Debug\SimpleCrawler.exe.config
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework9\SimpleCrawler\SimpleCrawler\bin\Debug\SimpleCrawler.exe
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework9\SimpleCrawler\SimpleCrawler\bin\Debug\SimpleCrawler.pdb
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework9\SimpleCrawler\SimpleCrawler\obj\Debug\SimpleCrawler.csprojAssemblyReference.cache
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework9\SimpleCrawler\SimpleCrawler\obj\Debug\SimpleCrawler.csproj.CoreCompileInputs.cache
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework9\SimpleCrawler\SimpleCrawler\obj\Debug\SimpleCrawler.exe
+C:\作业\软件构造基础(C#)\CSharp_Homework\Homework9\SimpleCrawler\SimpleCrawler\obj\Debug\SimpleCrawler.pdb
