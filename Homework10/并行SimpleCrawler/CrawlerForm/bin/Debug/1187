@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>思思博士 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/guoyansi19900907/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/guoyansi19900907/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/guoyansi19900907/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 131496;
+        var currentBlogApp = 'guoyansi19900907';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/guoyansi19900907/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/guoyansi19900907/">思思博士</a>
+</h1>
+<h2>
+我不虚伪，我就想挣钱，挣多多的钱，做多多的事。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/guoyansi19900907/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%80%9D%E6%80%9D%E5%8D%9A%E5%A3%AB">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/guoyansi19900907/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+395&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+298</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/guoyansi19900907/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12767565.html">
+    徒手编写Spring的初始化之山寨版IOC容器
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：建一个简单的web工程。 工程目录： 配置application.properties scanPackage=com.gys.demo #扫描该包下的类 编写注解 package annotation; import java.lang.annotation.*; @Target({Element            <a href="https://www.cnblogs.com/guoyansi19900907/p/12767565.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 15:10 思思博士 阅读 (11) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12767565" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12765353.html">
+    简述Java的SPI技术
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：人狠话不多，先上截图和代码吧。 这是工程目录。看到resources目录下面没有，添加了META-INF和services目录。 添加了一个com.gys.test.IAnimal文件。这个文件名和上面的接口名完全对应。这个目录的文件名是有讲究的，按照SPI规范来的。 上代码： package co            <a href="https://www.cnblogs.com/guoyansi19900907/p/12765353.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 09:32 思思博士 阅读 (28) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765353" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12678438.html">
+    不了解jdbc，何谈Mybatis的源码解析？
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这篇文章主要用来展示jdbc的使用，是为了方便阅读MyBatis源码使用的,为源码分析做一个提前热身； 里面很多关键性的信息在MyBatis源码里面都能找到，本篇不做MyBatis源码的分析， 因为MyBatis源码是一个庞大复杂的工程，不是&#160;一时半会，只言片语就能说完的。 jdbc Demo: 1            <a href="https://www.cnblogs.com/guoyansi19900907/p/12678438.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 09:03 思思博士 阅读 (64) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12678438" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/guoyansi19900907/archive/2020/04/18.html">2020年4月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12724871.html">
+    JDK动态代理之跳过动态代理徒手编写动态代理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：我的这篇博客分析了动态代理对象是如何生成的&#160;java动态代理之JDK源码解析， JDK动态代理的对象是JDK在没有产生任何文件的条件下，JVM直接通过字节数组生成的对象。 可是这种模式我们是没办法复制的。 你可能是一个非常牛逼的高手，能够直接编写存放字节码文件的字节数组；然而没有一个地方让你能够直接            <a href="https://www.cnblogs.com/guoyansi19900907/p/12724871.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 11:33 思思博士 阅读 (10) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12724871" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12566101.html">
+    java 自定义类加载器
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：百度了一下，通篇全部都是启动类加载器，扩展类加载器，应用程序类加载器，还有就是双亲委托模式 。 可是一圈下来，新手们依然不知道如何自定义一个类加载器，来生动的展现什么是类加载器。 首先我们在E:upload下新建一个a/BB.java文件。 代码如下： package a; public class            <a href="https://www.cnblogs.com/guoyansi19900907/p/12566101.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 10:45 思思博士 阅读 (15) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12566101" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/guoyansi19900907/archive/2020/04/17.html">2020年4月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12721676.html">
+    单例模式没你想的那么简单
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：网上到处都是懒汉，饿汉模式。给两个Demo就算过去了吧。 饿汉单例模式：在类加载的时候，就开始实例化了。 public class HungrySingleton { private static HungrySingleton one=new HungrySingleton(); private             <a href="https://www.cnblogs.com/guoyansi19900907/p/12721676.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 21:51 思思博士 阅读 (34) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12721676" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/guoyansi19900907/archive/2020/04/15.html">2020年4月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12592639.html">
+    java动态代理之JDK源码解析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：按照网上的惯例，先给出静态代理到动态代理的例子吧；要不然后面的理论和源码分析没有铺垫，大家都有点迷糊。 静态代理： /** * 声音接口，用于代理接口 */ public interface IVoice { void song(); } /** * 歌手类 */ public class Sing            <a href="https://www.cnblogs.com/guoyansi19900907/p/12592639.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 15:09 思思博士 阅读 (42) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12592639" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12696023.html">
+    Mybatis+Oracle搭配insert空值报错之myBatis+mysql驱动+oracle驱动的源码分析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：为了便于SEO搜索到，首先把报错内容贴出来吧 不同版本的Oracle驱动会报不同的错 1 &lt;dependency&gt; 2 &lt;groupId&gt;com.oracle&lt;/groupId&gt; 3 &lt;artifactId&gt;ojdbc6&lt;/artifactId&gt; 4 &lt;version&gt;1.0&lt;/version&gt; 5            <a href="https://www.cnblogs.com/guoyansi19900907/p/12696023.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 10:44 思思博士 阅读 (65) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12696023" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12703701.html">
+    MyBatis+Oracle在执行insert时空值报错之从源码寻找解决办法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：为了便于测试，先给出Demo代码： mybatis-oracle-config.xml 1 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; 2 &lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0/            <a href="https://www.cnblogs.com/guoyansi19900907/p/12703701.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 10:41 思思博士 阅读 (23) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12703701" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/guoyansi19900907/archive/2020/04/14.html">2020年4月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12681222.html">
+    MyBatis+Oracle时出现的错误： Method oracle/jdbc/driver/OracleResultSetImpl.isClosed()Z is abstract
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：今天在看MyBatis时，准备写一个Demo来验证看完TypHandler源码后的想法，可是demo刚一跑起来就报下面的错了。 随手在网上搜了一遍，都说是版本不匹配；就是不明白怎么个不匹配法；可是好奇心驱使我就想看看怎么个不匹配法。 先把我自己的代码贴在这。 maven依赖: 1 &lt;dependen            <a href="https://www.cnblogs.com/guoyansi19900907/p/12681222.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-14 09:22 思思博士 阅读 (92) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12681222" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/guoyansi19900907/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 思思博士
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

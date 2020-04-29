@@ -1,0 +1,727 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="建一个简单的web工程。 工程目录： 配置application.properties scanPackage=com.gys.demo #扫描该包下的类 编写注解 package annotatio" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>徒手编写Spring的初始化之山寨版IOC容器 - 思思博士 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/guoyansi19900907/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/guoyansi19900907/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/guoyansi19900907/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 131496;
+        var currentBlogApp = 'guoyansi19900907';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/guoyansi19900907/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/guoyansi19900907/">思思博士</a>
+</h1>
+<h2>
+我不虚伪，我就想挣钱，挣多多的钱，做多多的事。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/guoyansi19900907/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%80%9D%E6%80%9D%E5%8D%9A%E5%A3%AB">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/guoyansi19900907/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+395&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+298</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/guoyansi19900907/p/12767565.html">徒手编写Spring的初始化之山寨版IOC容器</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p><strong>建一个简单的web工程。</strong></p>
+<p><strong>工程目录：</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/446425/202004/446425-20200424145534081-1758190023.png" alt=""></p>
+<p>&nbsp;<strong>&nbsp;配置application.properties</strong></p>
+<div class="cnblogs_code">
+<pre>scanPackage=com.gys.demo #扫描该包下的类</pre>
+</div>
+<p><strong>编写注解</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> annotation;
+
+</span><span style="color: #0000ff;">import</span> java.lang.annotation.*<span style="color: #000000;">;
+
+@Target({ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+</span><span style="color: #0000ff;">public</span> @<span style="color: #0000ff;">interface</span><span style="color: #000000;"> GysAutowired {
+    String value() </span><span style="color: #0000ff;">default</span> ""<span style="color: #000000;">;
+}</span></pre>
+</div>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> annotation;
+
+</span><span style="color: #0000ff;">import</span> java.lang.annotation.*<span style="color: #000000;">;
+
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+</span><span style="color: #0000ff;">public</span> @<span style="color: #0000ff;">interface</span><span style="color: #000000;"> GysController {
+    String value() </span><span style="color: #0000ff;">default</span> ""<span style="color: #000000;">;
+}</span></pre>
+</div>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> annotation;
+
+</span><span style="color: #0000ff;">import</span> java.lang.annotation.*<span style="color: #000000;">;
+
+@Target({ElementType.TYPE,ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+</span><span style="color: #0000ff;">public</span> @<span style="color: #0000ff;">interface</span><span style="color: #000000;"> GysRequestMapping {
+    String value() </span><span style="color: #0000ff;">default</span> ""<span style="color: #000000;">;
+}</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> annotation;
+
+</span><span style="color: #0000ff;">import</span> java.lang.annotation.*<span style="color: #000000;">;
+
+@Target({ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+</span><span style="color: #0000ff;">public</span> @<span style="color: #0000ff;">interface</span><span style="color: #000000;"> GysRequestParam {
+    String value() </span><span style="color: #0000ff;">default</span> ""<span style="color: #000000;">;
+}</span></pre>
+</div>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> annotation;
+
+</span><span style="color: #0000ff;">import</span> java.lang.annotation.*<span style="color: #000000;">;
+
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+</span><span style="color: #0000ff;">public</span> @<span style="color: #0000ff;">interface</span><span style="color: #000000;"> GysService {
+    String value() </span><span style="color: #0000ff;">default</span> ""<span style="color: #000000;">;
+}</span></pre>
+</div>
+<p><strong>service编写</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> com.gys.demo.service;
+
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> IDemoService {
+    String get(String name);
+}</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> com.gys.demo.service.impl;
+
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> annotation.GysService;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> com.gys.demo.service.IDemoService;
+
+@GysService
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> DemoService <span style="color: #0000ff;">implements</span><span style="color: #000000;"> IDemoService {
+
+    @Override
+    </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> String get(String name) {
+        </span><span style="color: #0000ff;">return</span> "&lt;h1&gt;Hello,"+name+"&lt;/h1&gt;"<span style="color: #000000;">;
+    }
+}</span></pre>
+</div>
+<p><strong>controller代码</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> com.gys.demo.controller;
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> annotation.GysAutowired;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> annotation.GysController;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> annotation.GysRequestMapping;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> annotation.GysRequestParam;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> com.gys.demo.service.IDemoService;
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpServletRequest;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpServletResponse;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpSession;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.io.IOException;
+
+@GysController
+@GysRequestMapping(</span>"/demo"<span style="color: #000000;">)
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> DemoController {
+
+    @GysAutowired
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> IDemoService iDemoService;
+
+    @GysRequestMapping(</span>"/query"<span style="color: #000000;">)
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> query(HttpServletRequest request,HttpSession session,HttpServletResponse response, @GysRequestParam("name") String name) <span style="color: #0000ff;">throws</span><span style="color: #000000;"> IOException {
+        System.out.println(</span>"query.............."<span style="color: #000000;">);
+        String res</span>=<span style="color: #000000;">iDemoService.get(name);
+        response.getWriter().write(res);
+
+    }
+}</span></pre>
+</div>
+<p><strong>新建Servlet，配置servlet</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" </span><span style="color: #0000ff;">&gt;</span>
+
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">web-app</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">display-name</span><span style="color: #0000ff;">&gt;</span>Archetype Created Web Application<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">display-name</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">servlet</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">servlet-name</span><span style="color: #0000ff;">&gt;</span>gysMvc<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">servlet-name</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">servlet-class</span><span style="color: #0000ff;">&gt;</span>servlet.GysDispatcherServlet<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">servlet-class</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">init-param</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">param-name</span><span style="color: #0000ff;">&gt;</span>contextConfigLocation<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">param-name</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">param-value</span><span style="color: #0000ff;">&gt;</span>application.properties<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">param-value</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">init-param</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">load-on-startup</span><span style="color: #0000ff;">&gt;</span>1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">load-on-startup</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">servlet</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">servlet-mapping</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">servlet-name</span><span style="color: #0000ff;">&gt;</span>gysMvc<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">servlet-name</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">url-pattern</span><span style="color: #0000ff;">&gt;</span>/*<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">url-pattern</span><span style="color: #0000ff;">&gt;</span>
+
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">servlet-mapping</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">web-app</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>核心代码servlet,代码有点长，直接折叠了。</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('56e7e171-a82e-461d-ab30-40f0b4b992ce')"><img id="code_img_closed_56e7e171-a82e-461d-ab30-40f0b4b992ce" class="code_img_closed" src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img id="code_img_opened_56e7e171-a82e-461d-ab30-40f0b4b992ce" class="code_img_opened" style="display: none" src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="">
+<div id="cnblogs_code_open_56e7e171-a82e-461d-ab30-40f0b4b992ce" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> servlet;
+
+</span><span style="color: #0000ff;">import</span> annotation.*<span style="color: #000000;">;
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.ServletConfig;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.ServletException;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpServlet;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpServletRequest;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpServletResponse;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpSession;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.io.File;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.io.IOException;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.io.InputStream;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.lang.annotation.Annotation;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.lang.reflect.Field;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.lang.reflect.InvocationTargetException;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.lang.reflect.Method;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.net.URL;
+</span><span style="color: #0000ff;">import</span> java.util.*<span style="color: #000000;">;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.regex.Matcher;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.regex.Pattern;
+
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> GysDispatcherServlet <span style="color: #0000ff;">extends</span><span style="color: #000000;"> HttpServlet {
+
+    </span><span style="color: #0000ff;">private</span> Properties contextConfig = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Properties();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">包+类文件名（去除.class后缀）</span>
+    <span style="color: #0000ff;">private</span> List&lt;String&gt; classNames = <span style="color: #0000ff;">new</span> ArrayList&lt;&gt;<span style="color: #000000;">();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">名称，对象</span>
+    <span style="color: #0000ff;">private</span> Map&lt;String, Object&gt; ioc = <span style="color: #0000ff;">new</span> HashMap&lt;&gt;<span style="color: #000000;">();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">url,方法</span>
+    <span style="color: #0000ff;">private</span> List&lt;Handler&gt; handlerMapping=<span style="color: #0000ff;">new</span> ArrayList&lt;&gt;<span style="color: #000000;">();
+
+
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> init(ServletConfig config) <span style="color: #0000ff;">throws</span><span style="color: #000000;"> ServletException {
+
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">1.加载配置文件</span>
+        doLoadConfig(config.getInitParameter("contextConfigLocation"<span style="color: #000000;">));
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">2.扫描相关类</span>
+        doScanner(contextConfig.getProperty("scanPackage"<span style="color: #000000;">));
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">3.初始化扫描的类，并放入ioc容器</span>
+<span style="color: #000000;">        doInstance();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">完成依赖注入</span>
+<span style="color: #000000;">        doAutowired();
+
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">url和method的一对一关系</span>
+<span style="color: #000000;">        initHandlerMapping();
+        System.out.println(</span>"servlet init finsh=================="<span style="color: #000000;">);
+    }
+
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span> doGet(HttpServletRequest req, HttpServletResponse resp) <span style="color: #0000ff;">throws</span><span style="color: #000000;"> ServletException, IOException {
+        </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.doPost(req, resp);
+    }
+
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span> doPost(HttpServletRequest req, HttpServletResponse resp) <span style="color: #0000ff;">throws</span><span style="color: #000000;"> ServletException, IOException {
+        </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+            req.setCharacterEncoding(</span>"utf-8"<span style="color: #000000;">);
+            resp.setCharacterEncoding(</span>"utf-8"<span style="color: #000000;">);
+            resp.setContentType(</span>"text/html;charset=utf-8"<span style="color: #000000;">);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">具体处理逻辑</span>
+<span style="color: #000000;">            doDispatch(req, resp);
+        } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (InvocationTargetException e) {
+            e.printStackTrace();
+        } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (IllegalAccessException e) {
+            resp.getWriter().write(</span>"500 Exception" +<span style="color: #000000;"> Arrays.toString(e.getStackTrace()));
+        }
+    }
+
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span> doDispatch(HttpServletRequest request, HttpServletResponse response) <span style="color: #0000ff;">throws</span><span style="color: #000000;"> IOException, InvocationTargetException, IllegalAccessException {
+        Handler handler</span>=<span style="color: #000000;">getHandler(request);
+        </span><span style="color: #0000ff;">if</span>(handler==<span style="color: #0000ff;">null</span><span style="color: #000000;">){
+            response.getWriter().write(</span>"404 对不起没有您要的页面资源"<span style="color: #000000;">);
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;">;
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">参数类型数组</span>
+        Class&lt;?&gt;[] parameterTypes=<span style="color: #000000;">handler.method.getParameterTypes();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">参数数组</span>
+        Object[] paramValues=<span style="color: #0000ff;">new</span><span style="color: #000000;"> Object[parameterTypes.length];
+        Map</span>&lt;String, String[]&gt; parameterMap =<span style="color: #000000;"> request.getParameterMap();
+        </span><span style="color: #0000ff;">for</span>(Map.Entry&lt;String,String[]&gt;<span style="color: #000000;"> entry:parameterMap.entrySet()){
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">数组中的[[ 和 ]] 替换</span>
+            String value=Arrays.toString(entry.getValue()).replaceAll("\\[|\\]",""<span style="color: #000000;">);
+            </span><span style="color: #0000ff;">if</span>(!<span style="color: #000000;">handler.paramIndexMapping.containsKey(entry.getKey())){
+                </span><span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+            }
+            </span><span style="color: #0000ff;">int</span> index=<span style="color: #000000;">handler.paramIndexMapping.get(entry.getKey());
+            value</span>=<span style="color: #0000ff;">new</span> String(value.getBytes("iso-8859-1"), "utf-8"<span style="color: #000000;">);
+            paramValues[index]</span>=<span style="color: #000000;">convert(parameterTypes[index],value);
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">如果方法参数是request</span>
+        <span style="color: #0000ff;">if</span>(handler.paramIndexMapping.containsKey(HttpServletRequest.<span style="color: #0000ff;">class</span><span style="color: #000000;">.getName())){
+            </span><span style="color: #0000ff;">int</span> reqIndex=handler.paramIndexMapping.get(HttpServletRequest.<span style="color: #0000ff;">class</span><span style="color: #000000;">.getName());
+            paramValues[reqIndex]</span>=<span style="color: #000000;">request;
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">如果方法参数是response</span>
+        <span style="color: #0000ff;">if</span>(handler.paramIndexMapping.containsKey(HttpServletResponse.<span style="color: #0000ff;">class</span><span style="color: #000000;">.getName())){
+            </span><span style="color: #0000ff;">int</span> reqIndex=handler.paramIndexMapping.get(HttpServletResponse.<span style="color: #0000ff;">class</span><span style="color: #000000;">.getName());
+            paramValues[reqIndex]</span>=<span style="color: #000000;">response;
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">如果方法参数是session</span>
+        <span style="color: #0000ff;">if</span>(handler.paramIndexMapping.containsKey(HttpSession.<span style="color: #0000ff;">class</span><span style="color: #000000;">.getName())){
+            </span><span style="color: #0000ff;">int</span> reqIndex=handler.paramIndexMapping.get(HttpSession.<span style="color: #0000ff;">class</span><span style="color: #000000;">.getName());
+            paramValues[reqIndex]</span>=<span style="color: #000000;">request.getSession();
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">利用反射调用mapping标识的方法</span>
+        Object returnValue=<span style="color: #000000;">handler.method.invoke(handler.controller,paramValues);
+        </span><span style="color: #0000ff;">if</span>(returnValue==<span style="color: #0000ff;">null</span>||returnValue <span style="color: #0000ff;">instanceof</span><span style="color: #000000;"> Void){
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;">;
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">向浏览器输出类容</span>
+<span style="color: #000000;">        response.getWriter().write(returnValue.toString());
+    }
+
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> doLoadConfig(String contextConfigLocation) {
+        InputStream is </span>= <span style="color: #0000ff;">this</span><span style="color: #000000;">.getClass().getClassLoader().getResourceAsStream(contextConfigLocation);
+        </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+            contextConfig.load(is);
+        } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (IOException e) {
+            e.printStackTrace();
+        } </span><span style="color: #0000ff;">finally</span><span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">if</span> (is != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+                    is.close();
+                } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
+
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> doScanner(String scanPackage) {
+        String xgScanPackage </span>= scanPackage.replaceAll("\\.", "/"<span style="color: #000000;">);
+        URL url </span>= <span style="color: #0000ff;">this</span>.getClass().getClassLoader().getResource("/" +<span style="color: #000000;"> xgScanPackage);
+        String path </span>=<span style="color: #000000;"> url.getFile();
+        File classDir </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> File(path);
+        </span><span style="color: #0000ff;">for</span><span style="color: #000000;"> (File file : classDir.listFiles()) {
+            </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (file.isDirectory()) {
+                doScanner(scanPackage </span>+ "." +<span style="color: #000000;"> file.getName());
+            } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                </span><span style="color: #0000ff;">if</span> (!file.getName().endsWith(".class"<span style="color: #000000;">)) {
+                    </span><span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+                }
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">所有类的文件路径+包名</span>
+                String clazzName = (scanPackage + "." + file.getName()).replace(".class", ""<span style="color: #000000;">);
+                classNames.add(clazzName);
+            }
+        }
+    }
+
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> doInstance() {
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (classNames.isEmpty()) {
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;">;
+        }
+        </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">for</span><span style="color: #000000;"> (String className : classNames) {
+                Class</span>&lt;?&gt; clazz =<span style="color: #000000;"> Class.forName(className);
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">controller注解</span>
+                <span style="color: #0000ff;">if</span>(clazz.isAnnotationPresent(GysController.<span style="color: #0000ff;">class</span><span style="color: #000000;">)){
+                    Object instance</span>=<span style="color: #000000;">clazz.newInstance();
+                    String beanName</span>=<span style="color: #000000;">toLowerFirstCase(clazz.getSimpleName());
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;">类名,实例对象</span>
+<span style="color: #000000;">                    ioc.put(beanName,instance);
+                }</span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span>(clazz.isAnnotationPresent(GysService.<span style="color: #0000ff;">class</span>)){<span style="color: #008000;">//</span><span style="color: #008000;">service注解</span>
+                    Object instance=<span style="color: #000000;">clazz.newInstance();
+                    GysService gysService</span>=clazz.getAnnotation(GysService.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+                    String beanName</span>=<span style="color: #000000;">gysService.value();
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;">没规定类名</span>
+                    <span style="color: #0000ff;">if</span>(""<span style="color: #000000;">.equals(beanName.trim())){
+                        </span><span style="color: #008000;">//</span><span style="color: #008000;">类名首字母小写</span>
+                        beanName=<span style="color: #000000;">toLowerFirstCase(clazz.getSimpleName());
+                    }
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;">类名，对象</span>
+<span style="color: #000000;">                    ioc.put(beanName,instance);
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;">循环接口</span>
+                    <span style="color: #0000ff;">for</span><span style="color: #000000;">(Class inter:clazz.getInterfaces()){
+                        </span><span style="color: #008000;">//</span><span style="color: #008000;">接口长类名，子类实现对象</span>
+<span style="color: #000000;">                        ioc.put(inter.getName(),instance);
+                    }
+                }</span><span style="color: #0000ff;">else</span><span style="color: #000000;">{
+                    </span><span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+                }
+            }
+        } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (ClassNotFoundException e) {
+            e.printStackTrace();
+        } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (IllegalAccessException e) {
+            e.printStackTrace();
+        } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (InstantiationException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span><span style="color: #000000;">  doAutowired(){
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(ioc.isEmpty()){
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;">;
+        }
+
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">循环ioc容器</span>
+        <span style="color: #0000ff;">for</span> (Map.Entry&lt;String,Object&gt;<span style="color: #000000;"> entry:ioc.entrySet()) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">获取所有的字段</span>
+            Field[] fields =<span style="color: #000000;"> entry.getValue().getClass().getDeclaredFields();
+            </span><span style="color: #0000ff;">for</span><span style="color: #000000;">(Field field:fields){
+                field.setAccessible(</span><span style="color: #0000ff;">true</span><span style="color: #000000;">);
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">判断是否有有依赖注入</span>
+                <span style="color: #0000ff;">if</span> (!field.isAnnotationPresent(GysAutowired.<span style="color: #0000ff;">class</span><span style="color: #000000;">)) {
+                    </span><span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+                }
+                GysAutowired gysAutowired </span>= field.getAnnotation(GysAutowired.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">获取依赖名称</span>
+                String beanName=<span style="color: #000000;">gysAutowired.value().trim();
+                </span><span style="color: #0000ff;">if</span> (beanName.isEmpty()) {<span style="color: #008000;">//</span><span style="color: #008000;">未定义依赖名称
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;">获取字段类型长路径名</span>
+                    Class type=<span style="color: #000000;"> field.getType();
+                    </span><span style="color: #0000ff;">if</span> (type.isInterface()) {<span style="color: #008000;">//</span><span style="color: #008000;">接口用长路径名</span>
+                        beanName=<span style="color: #000000;">type.getName();
+                    }</span><span style="color: #0000ff;">else</span>{<span style="color: #008000;">//</span><span style="color: #008000;">实体类用类名</span>
+                        beanName=<span style="color: #000000;">toLowerFirstCase(type.getSimpleName());
+                    }
+                }
+                </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;">设置字段值，实现依赖注入</span>
+<span style="color: #000000;">                    field.set(entry.getValue(),ioc.get(beanName));
+                } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
+
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initHandlerMapping(){
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(ioc.isEmpty()){
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;">;
+        }
+        </span><span style="color: #0000ff;">for</span>(Map.Entry&lt;String,Object&gt;<span style="color: #000000;"> entry:ioc.entrySet()){
+            Class</span>&lt;?&gt; clazz=<span style="color: #000000;">entry.getValue().getClass();
+            </span><span style="color: #0000ff;">if</span>(!clazz.isAnnotationPresent(GysController.<span style="color: #0000ff;">class</span><span style="color: #000000;">)){
+                </span><span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+            }
+            String url</span>=""<span style="color: #000000;">;
+            </span><span style="color: #0000ff;">if</span>(clazz.isAnnotationPresent(GysRequestMapping.<span style="color: #0000ff;">class</span><span style="color: #000000;">)){
+                GysRequestMapping gysRequestMapping</span>=clazz.getAnnotation(GysRequestMapping.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+                url</span>=<span style="color: #000000;">gysRequestMapping.value();
+            }
+            </span><span style="color: #0000ff;">for</span><span style="color: #000000;">(Method method:clazz.getMethods()){
+                </span><span style="color: #0000ff;">if</span>(!method.isAnnotationPresent(GysRequestMapping.<span style="color: #0000ff;">class</span><span style="color: #000000;">)){
+                    </span><span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+                }
+                GysRequestMapping gysRequestMapping</span>=method.getAnnotation(GysRequestMapping.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+                String regex</span>=url+<span style="color: #000000;">gysRequestMapping.value();
+                Pattern pattern</span>=<span style="color: #000000;">Pattern.compile(regex);
+                handlerMapping.add(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> Handler(pattern,entry.getValue(),method));
+                System.out.println(</span>"Mapped："+url+","+<span style="color: #000000;">method);
+            }
+        }
+    }
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">首字母小写</span>
+    <span style="color: #0000ff;">private</span><span style="color: #000000;"> String toLowerFirstCase(String simpleName){
+        </span><span style="color: #0000ff;">char</span>[] chars=<span style="color: #000000;">simpleName.toCharArray();
+        chars[</span>0]+=32<span style="color: #000000;">;
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> String.valueOf(chars);
+    }
+
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Handler{
+        </span><span style="color: #0000ff;">protected</span> Object controller;<span style="color: #008000;">//</span><span style="color: #008000;">保存方法对应的实例</span>
+        <span style="color: #0000ff;">protected</span>  Method method;<span style="color: #008000;">//</span><span style="color: #008000;">保存映射方法</span>
+        <span style="color: #0000ff;">protected</span><span style="color: #000000;"> Pattern pattern;
+        </span><span style="color: #0000ff;">protected</span> Map&lt;String,Integer&gt; paramIndexMapping;<span style="color: #008000;">//</span><span style="color: #008000;">参数顺序</span>
+
+        <span style="color: #0000ff;">public</span><span style="color: #000000;"> Handler(Pattern pattern,Object controller, Method method) {
+            </span><span style="color: #0000ff;">this</span>.controller =<span style="color: #000000;"> controller;
+            </span><span style="color: #0000ff;">this</span>.method =<span style="color: #000000;"> method;
+            </span><span style="color: #0000ff;">this</span>.pattern =<span style="color: #000000;"> pattern;
+            </span><span style="color: #0000ff;">this</span>.paramIndexMapping = <span style="color: #0000ff;">new</span> HashMap&lt;&gt;<span style="color: #000000;">();
+            putParamIndexMapping(</span><span style="color: #0000ff;">this</span><span style="color: #000000;">.method);
+
+        }
+
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> putParamIndexMapping(Method method){
+            Annotation[][] annotations</span>=<span style="color: #000000;">method.getParameterAnnotations();
+            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=0;i&lt;annotations.length;i++<span style="color: #000000;">){
+                </span><span style="color: #0000ff;">for</span><span style="color: #000000;">(Annotation annotation:annotations[i]){
+                    </span><span style="color: #0000ff;">if</span>(annotation <span style="color: #0000ff;">instanceof</span><span style="color: #000000;"> GysRequestParam){
+                        String paranName</span>=<span style="color: #000000;">((GysRequestParam) annotation).value();
+                        </span><span style="color: #0000ff;">if</span>(!<span style="color: #000000;">paranName.trim().isEmpty()){
+                            paramIndexMapping.put(paranName,i);
+                        }
+                    }
+                }
+            }
+            Class</span>&lt;?&gt;[] paramsTypes=<span style="color: #000000;">method.getParameterTypes();
+            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=0;i&lt;paramsTypes.length;i++<span style="color: #000000;">){
+                Class</span>&lt;?&gt; type=<span style="color: #000000;">paramsTypes[i];
+                </span><span style="color: #0000ff;">if</span>(type==HttpServletRequest.<span style="color: #0000ff;">class</span>||type==HttpServletResponse.<span style="color: #0000ff;">class</span>||type==HttpSession.<span style="color: #0000ff;">class</span><span style="color: #000000;">){
+                    paramIndexMapping.put(type.getName(),i);
+                }
+            }
+
+        }
+    }
+
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> Handler getHandler(HttpServletRequest request){
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(handlerMapping.isEmpty()){
+            </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        }
+        String url</span>=<span style="color: #000000;">request.getRequestURI();
+        String contextPath</span>=<span style="color: #000000;">request.getContextPath();
+        url</span>=url.replace(contextPath,""<span style="color: #000000;">);
+        </span><span style="color: #0000ff;">for</span><span style="color: #000000;">(Handler handler:handlerMapping){
+            Matcher matcher</span>=<span style="color: #000000;">handler.pattern.matcher(url);
+            </span><span style="color: #0000ff;">if</span>(!<span style="color: #000000;">matcher.matches()){
+                </span><span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+            }
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> handler;
+        }
+        </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+    }
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">由于HTTP基于字符串协议，url传过来的参数都是String类型的;</span>
+    <span style="color: #0000ff;">private</span> Object convert(Class&lt;?&gt;<span style="color: #000000;"> type,String value){
+        </span><span style="color: #0000ff;">if</span>(Integer.<span style="color: #0000ff;">class</span>==<span style="color: #000000;">type){
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;">  Integer.valueOf(value);
+        }</span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span>(Double.<span style="color: #0000ff;">class</span>==<span style="color: #000000;">type){
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> Double.valueOf(value);
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">.......</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> value;
+    }
+
+}</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>&nbsp;</p>
+<p><strong>运行项目</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/446425/202004/446425-20200424150924802-146098506.png" alt=""></p>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 15:10</span>&nbsp;
+<a href="https://www.cnblogs.com/guoyansi19900907/">思思博士</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12767565" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12767565);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 131496, cb_blogApp = 'guoyansi19900907', cb_blogUserGuid = '5e09ce4e-2cfb-e111-aa3f-842b2b196315';
+    var cb_entryId = 12767565, cb_entryCreatedDate = '2020-04-24 15:10', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 思思博士
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>
